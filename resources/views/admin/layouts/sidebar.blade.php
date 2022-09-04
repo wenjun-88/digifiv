@@ -43,18 +43,14 @@ $path = 'images/Main_User.svg';
           </a>
         </li>
 
-
-
-        {{-- @if ($authUser->hasPermissionTo('Access Homepage'))
-          <li class="nav-item">
-            <a href="{{ route('admin.homepage.index') }}" class="nav-link {{ activeRoute('admin.homepage', true) }}">
-              <i class="nav-icon fas fa-home"></i>
-              <p>
-                Welcome Page Setting
-              </p>
-            </a>
-          </li>
-        @endif --}}
+        <li class="nav-item">
+        <a href="{{ route('admin.product.index') }}" class="nav-link {{ activeRoute('admin.product', true) }}">
+            <i class="nav-icon fas fa-boxes"></i>
+            <p>
+                Product List
+            </p>
+        </a>
+        </li>
 
       </ul>
     </nav>

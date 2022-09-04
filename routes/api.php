@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\ProductApiController;
+use App\Http\Controllers\API\Auth\AuthUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/login', [AuthUserController::class, 'login']);
+Route::post('/logout', [AuthUserController::class, 'logout'])->middleware('auth:api');
+
+
+Route::group([
+    'middleware' => ['api', 'auth:api'],
+
+], function () {
+    Route::post('/addProductStock', [ProductApiController::class, 'addProductStock']);
+    Route::post('/reduceProductStock', [ProductApiController::class, 'reduceProductStock']);
+
+
 });

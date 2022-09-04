@@ -36,26 +36,8 @@ class HomeController extends Controller
             $query->where('id', $role_id);
         })->count();
 
-        //===========================================================================
-        // Policy Warranty count
-        // $policyWarrantyCount = (int)model::query()->sum('download_count');
-        $policyWarrantyCount = 1;
-
-        //===========================================================================
-        // Resource download count
-        // $resourceDownloadCount = (int)model::query()->sum('download_count');
-        $resourceDownloadCount = 1;
-
-        //===========================================================================
-        // Package count
-        // $packageCount = (int)model::query()->sum('download_count');
-        $packageCount = 1;
-
         return [
             'userCount' => $userCount,
-            'policyWarrantyCount' => $policyWarrantyCount,
-            'resourceDownloadCount' => $resourceDownloadCount,
-            'packageCount' => $packageCount,
         ];
     }
 

@@ -14,8 +14,6 @@
 
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
-    <nav-message></nav-message>
-    <nav-notification></nav-notification>
     <li class="nav-item dropdown user user-menu">
       <a class="nav-link" data-toggle="dropdown" href="#">
         <img src="{{ asset($path) }}" class="user-image" alt="User Image">
